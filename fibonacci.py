@@ -11,3 +11,28 @@
 #fibonacci(n) обчислює n-те число Фібоначчі. Якщо число вже знаходиться у кеші, функція має повертати значення з кешу.
 #Якщо число не знаходиться у кеші, функція має обчислити його, зберегти у кеш та повернути результат.
 #Використання рекурсії для обчислення чисел Фібоначчі.
+
+
+def caching_fibonacci():
+
+    cache = {}
+
+    def fibonacci(n):
+        if n in cache:
+            return cache[n]
+        if n <= 0:
+            result = 0
+        elif n == 1:
+            result = 1
+        else:
+            result = fibonacci(n - 1) + fibonacci(n - 2)
+        cache[n] = result
+        return result
+    return fibonacci
+
+#Просимо користувача ввести число
+n = int(input("Enter you number: "))
+#Отримуємо функцию fibonacci з кешом
+fib = caching_fibonacci()
+#Викликаємо функцию
+print(f"Fibonacci({n}) = {fib(n)} ")
