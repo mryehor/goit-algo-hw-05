@@ -24,8 +24,7 @@ def parse_input(user_input):
 
 @input_error
 def add_contact(contacts, args) :
-    if len(args) < 2:
-        raise IndexError
+   
     name, phone = args[0], args[1]
     if not phone.isdigit():
         raise ValueError
@@ -34,8 +33,7 @@ def add_contact(contacts, args) :
         
 @input_error
 def change_contact(contacts, args):
-    if len(args) < 2 :
-        raise IndexError
+
     name, phone = args[0], args[1]
     if name not in contacts:
         raise KeyError
@@ -46,8 +44,7 @@ def change_contact(contacts, args):
         
 @input_error
 def show_phone(contacts, args) :
-    if len(args) < 1:
-        raise IndexError
+
     name = args[0]
     if name not in contacts:
         raise KeyError
