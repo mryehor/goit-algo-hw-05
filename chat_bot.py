@@ -95,12 +95,12 @@ def main():
             result = show_phone(contacts, args)
             print(result)
 
-        elif command == "show":
+        elif command == "all":
             result = show_all(contacts)
             print(result)
 
         else:
-            print("Unknown command. Try: add, change, phone, show, exit")
+            print("Unknown command. Try: add, change, phone, all, exit")
 
 if __name__ == "__main__":
     main()
