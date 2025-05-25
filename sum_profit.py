@@ -15,7 +15,7 @@ import re
 from typing import Generator, Callable
 
 def generator_numbers(text: str) -> Generator:
-    for match in re.findall(r'\b\d+\.\d+\b', text):
+    for match in re.findall(r' (?P<num>\d+\.\d+) ', text):
         yield float(match)
 def sum_profit(text: str, func: Callable):
     return sum(func(text))
